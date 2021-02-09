@@ -6,6 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form id="form">
+        <p>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+        </p>
+        <p>
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age" min="0" max="100">
+        </p>
+        <p>
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+        </p>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        const username = document.querySelector("#username");
+        function usernameCheck() {
+            if (username.value.length > 15) {
+                username.setCustomValidity('Username must be less than 15 characters');
+            } else {
+                username.setCustomValidity("");
+            }
+        }
+        username.addEventListener("change", usernameCheck);
+
+    </script>
 </body>
 </html>
