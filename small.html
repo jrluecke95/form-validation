@@ -22,8 +22,9 @@
         <button type="submit">Submit</button>
     </form>
     <script>
+
         const username = document.querySelector("#username");
-        function usernameCheck() {
+        function usernameCheck(event) {
             if (username.value.length > 15) {
                 username.setCustomValidity('Username must be less than 15 characters');
             } else {
